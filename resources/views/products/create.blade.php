@@ -9,8 +9,11 @@
                 </div>
 
                 <div class="panel-body">
-                    <form method="POST" action="/">
+                    <form method="POST" action="/products">
                         {{ csrf_field() }}
+
+                        {{--<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">--}}
+
                         <div class="form-group">
 
                             <label for="name">Product naam</label>
@@ -18,13 +21,13 @@
 
                         </div>
                         <div class="form-group">
-                            <label for="discription">Omschrijving</label>
-                            <textarea name="discription" class="form-control" id="discription" rows="10"></textarea>
+                            <label for="description">Omschrijving</label>
+                            <textarea name="description" class="form-control" id="description" rows="10"></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label for="prijs">Prijs</label>
-                            <input type="number" min="1" step="any" name="prijs" id="prijs"/>
+                            <label for="price">Prijs</label>
+                            <input type="number" min="1" step="any" name="price" id="price"/>
                         </div>
 
                         <div class="form-group">
