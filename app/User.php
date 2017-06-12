@@ -34,6 +34,11 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($value);
     }
 
+    public function setAddressAttribute($value)
+    {
+        $this->attributes['address'] = ucfirst($value);
+    }
+
     protected $hidden = [
         'password', 'remember_token',
     ];
