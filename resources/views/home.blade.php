@@ -37,7 +37,7 @@
     </div>
 @endsection
 
-
+<!-- Als de geen Admin is -->
 @else
 @section('content')
     <div class="container">
