@@ -17,7 +17,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <h4>Welkom {{ Auth::user()->name }}</h4>
-                        Je bent ingelogd met <strong>{{ Auth::user()->email }}</strong>
+                        Je bent ingelogd als: <strong>{{ Auth::user()->email }}</strong>
                     </div>
                 </div>
             </div>
