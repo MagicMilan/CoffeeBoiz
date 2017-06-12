@@ -5,23 +5,19 @@
 @section('content')
     <!-- Script dat de pagina iedere X aantal seconden ververst -->
     <script type="text/javascript">
-        setTimeout(function(){
+        setTimeout(function () {
             window.location.reload();
         }, 10000);
     </script>
-
- <strong>{{ Auth::user()->email }}</strong>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Bestellingen</div>
                     <div class="panel-body">
+                        <h4>Welkom {{ Auth::user()->name }}</h4>
+                        Je bent ingelogd als: <strong>{{ Auth::user()->email }}</strong>
+
                         <i>Hier een lijst met bestellingen.</i>
                     </div>
                 </div>
@@ -30,7 +26,7 @@
     </div>
 @endsection
 
-<!-- Als de geen Admin is -->
+
 @else
 @section('content')
     <div class="container">
