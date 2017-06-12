@@ -21,4 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('products', 'ProductsController');
 
-Route::get('/profile/{id}', 'ProfileController@profile')->middleware('admin', 'user');
+Route::get('/profile/{id}', 'ProfileController@profile')->middleware('admin');
+
+Route::get('/profile', 'ProfileController@my_profile');
