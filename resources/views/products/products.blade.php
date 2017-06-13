@@ -3,34 +3,23 @@
 @section('content')
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Producten</div>
-                    <div class="panel-body">
-                        <div class="list-group">
-                            @forelse($products as $product)
-                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h4 class="mb-1"><strong>{{ $product->name }}</strong></h4>
-
-                                        <small class="text-muted pull-right"><strong>{{ $product->price }} euro</strong></small>
-                                    </div>
-
-                                    <img width="40px" height="40px" src="{{ asset("images/$product->image") }}" alt="Productfoto">
-
-                                    <p class="mb-1">{{ $product->description }}</p>
-
-                                    <small class="text-muted">Laatst gewijzigd: {{ $product->updated_at }}</small>
-                                </a>
-                            @empty
-                                Er zijn geen producten beschikbaar
-                            @endforelse
+        <section class="price-1">
+            <div class="container">
+                <p class="lead"></p>
+                <div class="row plans">
+                    <h3>ALLE PRODUCTEN</h3>
+                    @foreach($products as $product)
+                        <div class="span4 plan">
+                            <div class="title">{{ strtoupper($product->name) }}</div>
+                            <div class="image"><img src="{{ ("images/$product->image") }}"></div>
+                            <div class="price">€{{ $product->price }}</div>
+                            <div class="description">{{ $product->description }}</div>
+                            <a class="btn btn-primary" href="#">Toevoegen aan winkelmandje</a>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 
 @endsection

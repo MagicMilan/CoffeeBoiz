@@ -5,11 +5,11 @@
                 <div class="nav-collapse collapse pull-right">
                     <ul class="nav">
                         <li class="active"><a href="#"><b>HOME</b></a></li>
-                        <li><a href="#"><b>PRODUCTEN</b></a></li>
+                        <li><a href="{{ url('/products') }}"><b>PRODUCTEN</b></a></li>
                     </ul>
                     <form class="navbar-form pull-left">
-                        <a class="btn btn-login" href="{{ route('login') }}">LOG IN</a>
-                        <a class="btn btn-primary" href="{{ route('register') }}">SIGN UP</a>
+                        <a class="btn btn-login" href="{{ route('login') }}">INLOGGEN</a>
+                        <a class="btn btn-primary" href="{{ route('register') }}">REGISTREREN</a>
                     </form>
                 </div>
             </div>
