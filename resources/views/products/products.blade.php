@@ -11,7 +11,7 @@
                     @foreach($products as $product)
                         <div class="span4 plan">
                             <div class="title">{{ strtoupper($product->name) }}</div>
-                            <div class="image"><img src="{{ ("images/$product->image") }}"></div>
+                            <div class="image"><img width="200" src="{{ ("images/$product->image") }}"></div>
                             <div class="price">€{{ $product->price }}</div>
                             <div class="description">{{ $product->description }}</div>
                             <a class="btn btn-primary" href="/addProduct/{{$product->id}}">Toevoegen aan winkelmandje</a>

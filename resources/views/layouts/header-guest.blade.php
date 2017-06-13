@@ -1,7 +1,7 @@
         <div class="navbar span12">
             <div class="navbar-inner">
                 <button type="button" class="btn btn-navbar"> </button>
-                <a class="brand" href="#"><img src="{{ asset ('assets/logo.PNG')}}" width="50" height="50" alt="">The Coffee Project<div><br></div></a>
+                <a style="text-decoration: none" class="brand" href="#"><img src="{{ asset ('assets/logo.PNG')}}" width="50" height="50" alt="">The Coffee Project<div><br></div></a>
                 <div class="nav-collapse collapse pull-right">
                     <ul class="nav">
                         <li class="active"><a href="#"><b>HOME</b></a></li>
