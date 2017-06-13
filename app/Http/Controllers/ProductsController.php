@@ -13,7 +13,7 @@ class ProductsController extends Controller
     {
         $products = Product::all();
 
-        return $products;
+        return view('products.products', compact('products'));
     }
 
     public function create()
@@ -21,42 +21,34 @@ class ProductsController extends Controller
         return view('products.create');
     }
 
+
     public function store(Request $request)
     {
+//        $this->validate($request, [
+//        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//    ]);
+
         /*
-         * --Verschillende methodes--
-         *
-         * 1)
+         * Image naam veranderen naar timestamp_user->id en opslaan.
+         */
+        $imageName = time() . "_" . Auth::user()->id . "." . $request->image->getClientOriginalExtension();
+        $request->image->move(public_path('images'), $imageName);
+
         $product = new Product;
         $product->user_id = Auth::user()->id;
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->image = $request->image;
+        $product->image = "public/images/" . $imageName;
 
         $product->save();
-        */
 
-        /*
-         * 2)
-        // Product::create($request->all());
-        */
-
-        /*
-         * 3
-         */
-        Product::create([
-            'user_id' => Auth::user()->id,
-            'name' => $request->name,
-            'description' => $request->description,
-            'price' => $request->price,
-            'image' => $request->image
-        ]);
+        return redirect('/products');
     }
 
     public function show($id)
     {
-        //
+
     }
 
     public function edit($id)

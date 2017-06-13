@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="panel-body">
-                    <form method="POST" action="/products">
+                    <form method="POST" action="/products" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         {{--<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">--}}

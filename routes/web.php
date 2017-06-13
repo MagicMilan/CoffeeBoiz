@@ -19,8 +19,22 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('products', 'ProductsController');
+/*
+ * Producten
+ */
+// Route::resource('products', 'ProductsController');
+Route::get('products', 'ProductsController@index');
+Route::post('products', 'ProductsController@store');
+Route::get('products/create', 'ProductsController@create')->middleware('admin');
+Route::get('products/{product}', 'ProductsController@show')->middleware('admin');
+Route::put('products/{product}', 'ProductsController@update');
+Route::delete('products/{product}', 'ProductsController@destroy');
+Route::get('products/{product}/edit', 'ProductsController@edit')->middleware('admin');
 
+
+/*
+ * Profielen
+ */
 Route::get('/profile/{id}', 'ProfileController@profile')->middleware('admin');
 
 Route::get('/profile', 'ProfileController@my_profile');
