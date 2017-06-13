@@ -34,3 +34,10 @@ Route::get('products/{product}/edit', 'ProductsController@edit')->middleware('ad
 Route::get('/profile/{id}', 'ProfileController@profile')->middleware('admin');
 
 Route::get('/profile', 'ProfileController@my_profile');
+
+/*
+ * Shopping cart
+ */
+Route::get('/addProduct/{productId}', 'CartController@addItem');
+Route::get('/removeItem/{productId}', 'CartController@removeItem');
+Route::get('/cart', 'CartController@showCart');

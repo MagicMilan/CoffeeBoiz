@@ -24,7 +24,7 @@
                     <div class="image"><img src="{{ ("images/$product->image") }}"></div>
                     <div class="price">€{{ $product->price }}</div>
                     <div class="description">{{ $product->description }}</div>
-                    <a class="btn btn-primary" href="#">Toevoegen aan winkelmandje</a>
+                    <a class="btn btn-primary" href="/addProduct/{{$product->id}}">Toevoegen aan winkelmandje</a>
                 </div>
                 @endforeach
         </div>

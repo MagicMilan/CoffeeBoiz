@@ -1,48 +1,35 @@
 @extends('layouts.app')
 
 
-
 @section('content')
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                        <div class="panel-heading">
-                            <h4><b>Product toevoegen</b></h4>
-                        </div>
+    <div class="container">
+        <div class="row">
+            <form method="POST" action="/products" enctype="multipart/form-data">
+                {{ csrf_field() }}
 
-                        <div class="panel-body">
-                            <form method="POST" action="/products" enctype="multipart/form-data">
-                                {{ csrf_field() }}
+                <div class="form-group">
+                    <h2>Product toevoegen</h2>
 
-                                {{--<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">--}}
+                    <label for="name">Product naam</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="description">Omschrijving</label>
+                    <textarea name="description" class="form-control" id="description"
+                              rows="10"></textarea>
+                </div>
 
-                                <div class="form-group">
+                <div class="form-group">
+                    <label for="price">Prijs</label>
+                    <input type="number" name="price" id="price"/>
+                </div>
 
-                                    <label for="name">Product naam</label>
-                                    <input type="text" name="name" id="name">
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="description">Omschrijving</label>
-                                    <textarea name="description" class="form-control" id="description"
-                                              rows="10"></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="price">Prijs</label>
-                                    <input type="number" min="1" step="any" name="price" id="price"/>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="image">Afbeelding</label>
-                                    <input type="file" name="image" id="image">
-                                </div>
-
-                                <input type="submit" class="btn btn-success" value="Opslaan">
-                            </form>
-
-                        </div>
-                    </div>
-            </div>
+                <div class="form-group">
+                    <label for="image">Afbeelding</label>
+                    <input type="file" name="image" id="image">
+                    <input type="submit" value="Opslaan">
+                </div>
+            </form>
         </div>
+    </div>
 @endsection

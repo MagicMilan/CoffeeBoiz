@@ -38,7 +38,8 @@
                 @include('layouts.header-admin')
             @endif
         </div>
-    </header>\
+    </header>
+
     <div class="container">
         @yield('content')
     </div>
