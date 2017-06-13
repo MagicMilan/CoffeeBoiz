@@ -39,7 +39,7 @@ class ProductsController extends Controller
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->image = "public/images/" . $imageName;
+        $product->image = $imageName;
 
         $product->save();
 
