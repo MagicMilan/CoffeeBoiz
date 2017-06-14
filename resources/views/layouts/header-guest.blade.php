@@ -6,7 +6,6 @@
                     <ul class="nav">
                         <li class="active"><a href="{{ url('/') }}"><b>HOME</b></a></li>
                         <li><a href="{{ url('/products') }}"><b>PRODUCTEN</b></a></li>
-                        <li><a href="{{ url('/cart') }}"><span class="fa fa-shopping-cart" aria-hidden="true"></span></a></li>
                     </ul>
                     <form class="navbar-form pull-left">
                         <a class="btn btn-login" href="{{ route('login') }}">Inloggen</a>
