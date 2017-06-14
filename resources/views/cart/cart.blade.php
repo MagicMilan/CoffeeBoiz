@@ -53,14 +53,14 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <a href="/">
+                        <a href="/products">
                             <button type="button" class="btn btn-default">
-                                <span class="fa fa-shopping-cart"></span> Doorgaan met winkelen
+                                 Doorgaan met winkelen
                             </button>
                         </a></td>
                     <td>
                         <button type="button" class="btn btn-success">
-                            Bestellen <span class="fa fa-play"></span>
+                            Bestellen
                         </button>
                     </td>
                 </tr>

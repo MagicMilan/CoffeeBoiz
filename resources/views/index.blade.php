@@ -16,7 +16,6 @@
     <section class="price-1">
         <div class="container">
             <h3>MEEST VERKOCHT</h3>
-            <p class="lead"></p>
             <div class="row plans">
                 @foreach($products as $product)
                 <div class="span4 plan">
@@ -27,13 +26,14 @@
                     <a class="btn btn-primary" href="/addProduct/{{$product->id}}">Toevoegen aan winkelmandje</a>
                 </div>
                 @endforeach
+            </div>
         </div>
     </section>
 
     <!-- footer-2 -->
     <footer class="footer-2 bg-starbucks">
         <div class="container">
-            &copy; The Coffee Project
+            <p>&copy; The Coffee Project</p>
         </div>
     </footer>
 @endsection

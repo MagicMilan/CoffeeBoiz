@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link rel="shortcut icon" href="../libs/flat-ui/flat-ui/images/favicon.ico">
+    <script src="https://use.fontawesome.com/9a55390c4c.js"></script>
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">

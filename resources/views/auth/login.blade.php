@@ -49,8 +49,8 @@
                                     Onthoud mij
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-primary">
-                                Inloggen
+                            <button type="submit" class="btn btn-login">
+                                <b>Inloggen</b>
                             </button>
                         </div>
                     </div>
