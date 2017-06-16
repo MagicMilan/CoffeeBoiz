@@ -11,6 +11,22 @@ class IndexController extends Controller
     {
         $products = DB::table('products')->limit(3)->get();
 
-        return view('index', ['products' => $products]);
+
+        $cart = Cart::where('user_id',Auth::user()->id)->first();
+
+        if(!$cart){
+            $cart =  new Cart();
+            $cart->user_id=Auth::user()->id;
+            $cart->save();
+        }
+
+        $items = $cart->cartItems;
+        $total=0;
+        foreach($items as $item){
+            $total+=$item->product->price;
+        }
+
+
+        return view('index', ['products' => $products, 'total'=>$total]);
     }
 }

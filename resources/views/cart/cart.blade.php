@@ -46,7 +46,7 @@
                     <td></td>
                     <td></td>
                     <td><h3>Totaal</h3></td>
-                    <td class="text-right"><h3><strong>€ {{$total}}</strong></h3></td>
+                    <td class="text-right"><h3><strong>€ {{ $total }}</strong></h3></td>
                 </tr>
                 <tr>
                     <td></td>
