@@ -1,31 +1,32 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', 'IndexController@index');
 
 Auth::routes();
 
+
 /*
  * Producten
  */
-// Route::resource('products', 'ProductsController');
 Route::get('products', 'ProductsController@index');
-Route::post('products', 'ProductsController@store');
+Route::post('products', 'ProductsController@store')->middleware('admin');
 Route::get('products/create', 'ProductsController@create')->middleware('admin');
 Route::get('products/{product}', 'ProductsController@show')->middleware('admin');
-Route::put('products/{product}', 'ProductsController@update');
-Route::delete('products/{product}', 'ProductsController@destroy');
+Route::put('products/{product}', 'ProductsController@update')->middleware('admin');
+Route::delete('products/{product}', 'ProductsController@destroy')->middleware('admin');
 Route::get('products/{product}/edit', 'ProductsController@edit')->middleware('admin');
+
+
+/*
+ * Categoriën
+ */
+Route::get('categories', 'categoriesController@index');
+Route::post('categories', 'categoriesController@store')->middleware('admin');
+Route::get('categories/create', 'categoriesController@create')->middleware('admin');
+Route::get('categories/{product}', 'categoriesController@show')->middleware('admin');
+Route::put('categories/{product}', 'categoriesController@update')->middleware('admin');
+Route::delete('categories/{product}', 'categoriesController@destroy')->middleware('admin');
+Route::get('categories/{product}/edit', 'categoriesController@edit')->middleware('admin');
 
 
 /*
@@ -34,6 +35,7 @@ Route::get('products/{product}/edit', 'ProductsController@edit')->middleware('ad
 Route::get('/profile/{id}', 'ProfileController@profile')->middleware('admin');
 
 Route::get('/profile', 'ProfileController@my_profile');
+
 
 /*
  * Shopping cart
