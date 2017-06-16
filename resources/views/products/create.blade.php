@@ -11,11 +11,11 @@
                         <h2>Product toevoegen</h2>
 
                         <label for="name">Product naam</label>
-                        <input type="text" name="name" id="name">
+                        <input type="text" name="name" id="name" required autofocus>
                     </div>
                     <div class="form-group">
                         <label for="description">Omschrijving</label>
-                        <textarea name="description" class="form-control" id="description"
+                        <textarea name="description" class="form-control" id="description" required
                                   rows="10"></textarea>
                     </div>
 
@@ -30,12 +30,12 @@
 
                     <div class="form-group">
                         <label for="price">Prijs</label>
-                        <input type="number" name="price" id="price"/>
+                        <input type="number" name="price" id="price" required>
                     </div>
 
                     <div class="form-group">
                         <label for="image">Afbeelding</label>
-                        <input type="file" name="image" id="image">
+                        <input type="file" name="image" id="image" required>
                     </div>
                     <input type="submit" value="Opslaan" class="btn btn-success">
                 </form>
