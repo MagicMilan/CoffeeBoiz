@@ -20,6 +20,15 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="category">Categorie</label>
+                        <select id="category">
+                            @foreach($categories as $category)
+                                <option value="volvo">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label for="price">Prijs</label>
                         <input type="number" name="price" id="price"/>
                     </div>

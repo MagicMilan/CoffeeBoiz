@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->date('dob');
             $table->string('address');
+            $table->string('place');
+            $table->string('zip');
             $table->string('phone_nr', 15);
             $table->boolean('admin')->default(false);
             $table->rememberToken();
