@@ -23,7 +23,7 @@
                         <label for="category">Categorie</label>
                         <select id="category">
                             @foreach($categories as $category)
-                                <option value="category">{{ $category->name }}</option>
+                                <option value="{{ $category->name }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
