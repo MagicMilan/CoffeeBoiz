@@ -15,6 +15,7 @@ class IndexController extends Controller
         $products = DB::table('products')->limit(3)->get();
 
 
+        // Prijs overal zichtbaar?
         $cart = Cart::where('user_id',Auth::user()->id)->first();
 
         if(!$cart){
