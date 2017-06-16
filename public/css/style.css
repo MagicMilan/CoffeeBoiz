@@ -591,7 +591,7 @@ header {
     text-decoration:none !important;
 }
 .header-11 .navbar .brand a:hover{
-   color: #34495e !important;
+   text-decoration: none !important;
 }
 header .brand img:first-child {
   float: left;
@@ -733,10 +733,15 @@ section * {
   background: none;
 }
 .header-11 .navbar .brand {
-  padding-left: 0;
-  padding-top: 30px;
-  font-size: 25px;
-  font-weight: normal;
+   padding-left: 0;
+   padding-top: 30px;
+   font-size: 25px;
+   font-weight: bold;
+   color: #34495e;
+ }
+
+.header-11 .navbar .brand:hover {
+  text-decoration: none;
   color: #34495e;
 }
 
@@ -1410,6 +1415,7 @@ section * {
   padding-top: 40px;
   padding-bottom: 40px;
   margin: 0 0 20px;
+  background-image: url('../assets/koffieheader1.jpg')
 }
 @media (max-width: 767px) {
   .logos {
@@ -1431,7 +1437,7 @@ section * {
 }
 
 .logos > .container a p {
-    font-weight: bold;
+    font-weight: 900;
     margin-top: 10px;
     color: #006341;
 }
