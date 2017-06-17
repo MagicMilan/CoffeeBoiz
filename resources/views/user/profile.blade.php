@@ -34,6 +34,14 @@
                             <td>{{ $user->address }}</td>
                         </tr>
                         <tr>
+                            <td>Postcode:</td>
+                            <td>{{ $user->zip }}</td>
+                        </tr>
+                        <tr>
+                            <td>Woonplaats:</td>
+                            <td>{{ $user->place }}</td>
+                        </tr>
+                        <tr>
                             <td>Telefoonnummer:</td>
                             <td>{{ $user->phone_nr }}</td>
                         </tr>

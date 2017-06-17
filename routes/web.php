@@ -8,13 +8,16 @@ Auth::routes();
 /*
  * Producten
  */
+
+
 Route::get('products', 'ProductsController@index');
 Route::post('products', 'ProductsController@store')->middleware('admin');
 Route::get('products/create', 'ProductsController@create')->middleware('admin');
-Route::get('products/{product}', 'ProductsController@show')->middleware('admin');
-Route::put('products/{product}', 'ProductsController@update')->middleware('admin');
-Route::delete('products/{product}', 'ProductsController@destroy')->middleware('admin');
+Route::get('products/{product}', 'ProductsController@show');
 Route::get('products/{product}/edit', 'ProductsController@edit')->middleware('admin');
+Route::put('products/{product}', 'ProductsController@update')->middleware('admin');
+Route::get('products/{product}/delete', 'ProductsController@delete')->middleware('admin');
+Route::delete('products/{product}', 'ProductsController@destroy')->middleware('admin');
 
 
 /*
