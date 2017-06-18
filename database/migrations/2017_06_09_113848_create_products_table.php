@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use DB;
+use Carbon\Carbon;
 
 class CreateProductsTable extends Migration
 {
@@ -21,7 +23,9 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->string('category', 50)->nullable();
             $table->string('image', 255);
-            $table->timestamps();
+            $table->integer('times')->default(0);
+            $table->timestamp('created_at')->default(Carbon::now());
+            $table->timestamp('updated_at')->default(Carbon::now());
         });
     }
 

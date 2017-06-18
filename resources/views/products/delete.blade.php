@@ -14,7 +14,7 @@
 
 
                         <a class="btn btn-default" href="/products">Annuleren</a>
-                        <input type="submit" value="Verwijderen" class="btn btn-success">s
+                        <input type="submit" value="Verwijderen" class="btn btn-success">
                     </div>
                 </form>
             </div>
