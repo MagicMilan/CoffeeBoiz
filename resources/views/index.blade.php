@@ -7,7 +7,7 @@
             @foreach($categories as $category)
                 <div>
                     <a href="#">
-                        <img src=" {{ ("images/$category->image") }}" width="150" alt="">
+                        <img src=" {{ ("images/$category->image") }}" width="150" height="150" alt="">
                         <p>{{ strtoupper($category->name) }}</p>
                     </a>
                 </div>

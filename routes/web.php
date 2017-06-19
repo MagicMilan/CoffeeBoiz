@@ -8,8 +8,6 @@ Auth::routes();
 /*
  * Producten
  */
-
-
 Route::get('products', 'ProductsController@index');
 Route::post('products', 'ProductsController@store')->middleware('admin');
 Route::get('products/create', 'ProductsController@create')->middleware('admin');
@@ -36,7 +34,6 @@ Route::get('categories/{product}/edit', 'categoriesController@edit')->middleware
  * Profielen
  */
 Route::get('/profile/{id}', 'ProfileController@profile')->middleware('admin');
-
 Route::get('/profile', 'ProfileController@my_profile')->middleware('auth');
 
 

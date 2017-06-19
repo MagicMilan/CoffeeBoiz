@@ -35,7 +35,7 @@
                         <td class="col-sm-1 col-md-1">
                             <a href="/removeItem/{{$item->id}}">
                                 <button type="button" class="btn btn-danger">
-                                    <span class="fa fa-remove"></span> Wissen
+                                    </span> Wissen
                                 </button>
                             </a>
                         </td>
@@ -55,7 +55,7 @@
                     <td></td>
                     <td>
                         <a href="/products" class="btn btn-default">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Doorgaan met winkelen
+                            Verder winkelen
                         </a></td>
                     <td>
                         <form method="post" action="/checkout">
@@ -63,7 +63,7 @@
                             <input type="hidden" name="_method" value="put">
                             <input type="hidden" value="PUT">
                             <button type="submit" class="btn btn-success">
-                                Bestellen <i class="fa fa-play" aria-hidden="true"></i>
+                                Bestellen
                             </button>
                         </form>
                     </td>

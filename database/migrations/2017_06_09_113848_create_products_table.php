@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('name', 30);
             $table->string('description', 255);
             $table->double('price');
-            $table->string('category', 50)->nullable();
+            $table->integer('category')->nullable();
             $table->string('image', 255);
             $table->integer('times')->default(0);
             $table->timestamp('created_at')->default(Carbon::now());

@@ -30,8 +30,12 @@
                         <td>€ {{number_format($item->product->price,2,',','')}}</td>
                     </tr>
                 @endforeach
+                <tr>
+                    <td></td>
+                    <td><h4>Totaal</h4></td>
+                    <td class="text-right"><h4><strong>€ {{ number_format($order->total_pricel,2,',','') }}</strong></h4></td>
+                </tr>
             </table>
-            <p class="pull-right">Totaal: <strong>€ {{ number_format($order->total_price, 2, ',', '') }}</strong></p>
         </div>
     </div>
 @endsection

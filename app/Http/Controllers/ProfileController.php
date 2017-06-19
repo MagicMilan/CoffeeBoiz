@@ -13,7 +13,7 @@ class ProfileController extends Controller
     public function profile($id)
     {
         $user = User::whereId($id)->first();
-        $orders = Order::where('user_id', Auth::user()->id)->get();
+        $orders = Order::where('user_id', $id)->get();
 
         $data = array('user' => $user, 'orders' =>  $orders);
 

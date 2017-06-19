@@ -23,7 +23,7 @@
                         <label for="category">Categorie</label>
                         <select name="category" id="category">
                             @forelse($categories as $category)
-                                <option value="{{ $category->name }}">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @empty
                                 <option disabled="disabled">Geen categoriën</option>
                             @endforelse

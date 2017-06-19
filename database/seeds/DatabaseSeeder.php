@@ -64,6 +64,12 @@ class DatabaseSeeder extends Seeder
             'image' => 'seed/cold.jpg',
         ]);
 
+        Category::create([
+            'user_id' => null,
+            'name' => 'Thee',
+            'image' => 'seed/thee.jpg',
+        ]);
+
         /*
          * Create products
          */
@@ -73,7 +79,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Heerlijk romige cappuccino',
             'price' => 2.50,
             'image' => 'seed/capp.jpeg',
-            'category' => 'Latte',
+            'category' => 3,
         ]);
 
 
@@ -83,7 +89,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Originele Siciliaanse Espresso',
             'price' => 2.50,
             'image' => 'seed/espresso.jpg',
-            'category' => 'Koffie',
+            'category' => 1,
         ]);
 
         Product::create([
@@ -92,7 +98,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Espresso tussen twee lagen melk',
             'price' => 2.50,
             'image' => 'seed/lattemacchiato.jpg',
-            'category' => 'Latte'
+            'category' => 3
         ]);
     }
 }
