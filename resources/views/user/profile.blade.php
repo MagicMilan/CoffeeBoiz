@@ -47,8 +47,7 @@
                             </tr>
                             <tr>
                                 <td>Lid sinds:</td>
-                                <td>{{ $user->created_at->format('j - n - Y') }} ({{ $user->created_at->diffInDays() }}
-                                    dagen)
+                                <td>{{ $user->created_at->format('j - n - Y') }} ({{ $user->created_at->diffInDays() }} dagen)
                                 </td>
                             </tr>
                             </tbody>
