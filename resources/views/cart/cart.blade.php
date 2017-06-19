@@ -62,7 +62,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="_method" value="put">
                             <input type="hidden" value="PUT">
-                            <button type="submit" href="/checkout" class="btn btn-success">
+                            <button type="submit" class="btn btn-success">
                                 Bestellen <i class="fa fa-play" aria-hidden="true"></i>
                             </button>
                         </form>

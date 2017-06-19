@@ -7,7 +7,7 @@
             @if(isset(Auth::user()->admin))
                 @if(Auth::user()->admin)
                     <div class="row text-center">
-                        <a class="btn btn-primary" href="{{ url('/products/create') }}">
+                        <a class="btn" href="{{ url('/products/create') }}">
                             Product toevoegen
                         </a>
                     </div>

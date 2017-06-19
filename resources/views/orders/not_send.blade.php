@@ -3,8 +3,8 @@
 @section('content')
     <div class="row">
         <div class="col-md-8">
-            <h1>Bestellingen</h1>
-            <a href="/orders/send" class="btn">Afgeleverd</a> <a href="/orders/not_send" class="btn">Niet afgeleverd</a>
+            <h1>Afgeleverde bestellingen</h1>
+            <a href="/orders" class="btn">Bestellingen</a> <a href="/orders/send" class="btn">Afgeleverd</a>
             <table class="table table-striped">
                 @if($orders->count() > 0)
                     <thead>
@@ -13,8 +13,8 @@
                         <th class="col-sm-2">Klantnummer</th>
                         <th class="col-sm-2">Producten</th>
                         <th class="col-sm-4">Geplaatst op</th>
+                        <th class="col-sm-2">Geupdate op</th>
                         <th class="col-sm-2">Prijs</th>
-                        <th class="col-sm-2">Status</th>
                     </tr>
                     </thead>
                 @else
@@ -42,27 +42,9 @@
 
                         </td>
                         <td>{{$order->created_at->format('j-n-Y G:i')}}</td>
+                        <td>{{$order->updated_at->format('j-n-Y G:i')}}</td>
                         <td>€ {{ number_format($order->total_price, 2, ',', '') }}</td>
 
-                        <td>
-                            <form method="post" action="/order/{{ $order->id }}/send">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="_method" value="put">
-
-                                <button type="submit" class="btn btn-success"
-                                        style="width: 3em">
-                                    <i class="fa fa-check"></i>
-                                </button>
-                            </form>
-                            <form method="post" action="/order/{{ $order->id }}/not_send">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="_method" value="put">
-
-                                <button type="submit" class="btn btn-danger" style="width: 3em">
-                                    <i class="fa fa-times"></i>
-                                </button>
-                            </form>
-                        </td>
 
                     </tr>
                 @endforeach

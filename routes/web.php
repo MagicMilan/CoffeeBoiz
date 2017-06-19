@@ -53,5 +53,11 @@ Route::get('/cart', 'CartController@showCart')->middleware('auth');
  */
 Route::put('/checkout', 'OrderController@checkout')->middleware('auth');
 Route::get('order/{orderId}', 'OrderController@viewOrder')->middleware('auth');
+
 Route::get('/orders', 'OrderController@viewOrders')->middleware('admin');
-Route::put('/order/{orderId}', 'OrderController@setSend')->middleware('admin');
+
+Route::get('/orders/send', 'OrderController@viewSend')->middleware('admin');
+Route::get('/orders/not_send', 'OrderController@viewNotSend')->middleware('admin');
+
+Route::put('/order/{orderId}/send', 'OrderController@setSend')->middleware('admin');
+Route::put('/order/{orderId}/not_send', 'OrderController@setNotSend')->middleware('admin');

@@ -55,10 +55,26 @@ class OrderController extends Controller
 
     public function viewOrders()
     {
-        $orders = Order::where('send', 0)->get();
+        $orders = Order::where('send', 0)->where('not_send', 0)->get();
         $items = OrderItem::all();
         $products = Product::all();
         return view('orders.orders', ['orders' => $orders, 'items' => $items, 'products' => $products]);
+    }
+
+    public function viewSend()
+    {
+        $orders = Order::where('send', 1)->where('not_send', 0)->get();
+        $items = OrderItem::all();
+        $products = Product::all();
+        return view('orders.send', ['orders' => $orders, 'items' => $items, 'products' => $products]);
+    }
+
+    public function viewNotSend()
+    {
+        $orders = Order::where('send', 0)->where('not_send', 1)->get();
+        $items = OrderItem::all();
+        $products = Product::all();
+        return view('orders.not_send', ['orders' => $orders, 'items' => $items, 'products' => $products]);
     }
 
     public function setSend($id)
@@ -66,6 +82,17 @@ class OrderController extends Controller
         $order = Order::findOrFail($id);
 
         $order->send = true;
+
+        $order->save();
+
+        return redirect("/orders");
+    }
+
+    public function setNotSend($id)
+    {
+        $order = Order::findOrFail($id);
+
+        $order->not_send = true;
 
         $order->save();
 
