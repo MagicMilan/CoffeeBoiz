@@ -46,3 +46,11 @@ Route::get('/profile', 'ProfileController@my_profile');
 Route::get('/addProduct/{productId}', 'CartController@addItem');
 Route::get('/removeItem/{productId}', 'CartController@removeItem');
 Route::get('/cart', 'CartController@showCart');
+
+
+/*
+ * Order
+ */
+Route::put('/checkout', 'OrderController@checkout');
+
+Route::get('order/{orderId}', 'OrderController@viewOrder');

@@ -7,8 +7,9 @@
             @if(isset(Auth::user()->admin))
                 @if(Auth::user()->admin)
                     <div class="row text-center">
-                        <a class="btn btn-primary" href="{{ url('/products/create') }}"><b>Product
-                                toevoegen</b></a>
+                        <a class="btn btn-primary" href="{{ url('/products/create') }}">
+                            Product toevoegen
+                        </a>
                     </div>
                 @endif
             @endif
@@ -35,8 +36,8 @@
                             <div class="image"><img width="150" src="{{ ("images/$product->image") }}"></div>
                             <div class="price">€{{ $product->price }}</div>
                             <div class="description">{{ $product->description }}</div>
-                            <a class="btn fa fa-cart-plus" style="font-size: 1.5em" href="/addProduct/{{$product->id}}">
-                                Voeg toe
+                            <a class="btn" href="/addProduct/{{$product->id}}">
+                                +<i class="fa fa-shopping-cart" style="color: #fff"></i>
                             </a>
                         </div>
                     @endforeach

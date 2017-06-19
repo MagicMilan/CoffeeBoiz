@@ -26,7 +26,9 @@
                         <div class="image"><img width="200" src=" {{ ("images/$product->image") }}"></div>
                         <div class="price">€{{ $product->price }}</div>
                         <div class="description">{{ $product->description }}</div>
-                        <a class="btn btn-primary" href="/addProduct/{{$product->id}}">Toevoegen aan winkelmandje</a>
+                        <a class="btn" href="/addProduct/{{$product->id}}">
+                            +<i class="fa fa-shopping-cart" style="color: #fff"></i>
+                        </a>
                     </div>
                 @endforeach
             </div>

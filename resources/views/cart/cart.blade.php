@@ -23,7 +23,8 @@
                                                                               src="images/{{$item->product->image}}"
                                                                               style="width: 100px; height: 72px;"> </a>
                                 <div class="media-body">
-                                    <h4 class="media-heading"><a style="text-decoration: none;" href="#">{{$item->product->name}}</a></h4>
+                                    <h4 class="media-heading"><a style="text-decoration: none;"
+                                                                 href="#">{{$item->product->name}}</a></h4>
                                 </div>
                             </div>
                         </td>
@@ -53,15 +54,18 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <a href="/products">
-                            <button type="button" class="btn btn-default">
-                                 Doorgaan met winkelen
-                            </button>
+                        <a href="/products" class="btn btn-default">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Doorgaan met winkelen
                         </a></td>
                     <td>
-                        <button type="button" class="btn btn-success">
-                            Bestellen
-                        </button>
+                        <form method="post" action="/checkout">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="_method" value="put">
+                            <input type="hidden" value="PUT">
+                            <button type="submit" href="/checkout" class="btn btn-success">
+                                Bestellen <i class="fa fa-play" aria-hidden="true"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 </tbody>

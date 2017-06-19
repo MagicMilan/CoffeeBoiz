@@ -23,20 +23,23 @@
 </head>
 <body>
 <div id="app">
+
     <header class="header-11">
-        <div class="container">
-            <!-- Navbar - Als de gebruiker niet is ingelogd-->
-        @if (Auth::guest())
-            @include('layouts.header-guest')
+        <div class="row">
+            <div class="container">
+                <!-- Navbar - Als de gebruiker niet is ingelogd-->
+            @if (Auth::guest())
+                @include('layouts.header-guest')
 
 
-            <!-- Navbar - Als de gebruiker is ingelogd -->
-        @elseif (Auth::user()->admin == false)
-            @include('layouts.header-loggedin')
-            <!-- Als de gebruiker admin is -->
-            @else
-                @include('layouts.header-admin')
-            @endif
+                <!-- Navbar - Als de gebruiker is ingelogd -->
+            @elseif (Auth::user()->admin == false)
+                @include('layouts.header-loggedin')
+                <!-- Als de gebruiker admin is -->
+                @else
+                    @include('layouts.header-admin')
+                @endif
+            </div>
         </div>
     </header>
 
