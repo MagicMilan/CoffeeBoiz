@@ -18,10 +18,10 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->nullable();
+            $table->integer('category_id')->nullable();
             $table->string('name', 30);
             $table->string('description', 255);
             $table->double('price');
-            $table->integer('category')->nullable();
             $table->string('image', 255);
             $table->integer('times')->default(0);
             $table->timestamp('created_at')->default(Carbon::now());

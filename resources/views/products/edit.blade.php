@@ -23,7 +23,7 @@
                     <div class="form-group">
                         <label for="category">Categorie</label>
                         <select name="category" id="category">
-                            <option value="{{ $categories->where('category', $product->category) }}">{{ $product->category }}</option>
+                            <option value="{{ $product->category->id }}">{{ $product->category->name }}</option>
                             @forelse($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @empty
