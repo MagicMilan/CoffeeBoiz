@@ -71,7 +71,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => null,
             'name' => 'Cappuccino',
             'description' => 'Heerlijk romige cappuccino',
-            'price' => 250,
+            'price' => 2.50,
             'image' => 'seed/capp.jpeg',
             'category' => 'Latte',
         ]);
@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => null,
             'name' => 'Espresso',
             'description' => 'Originele Siciliaanse Espresso',
-            'price' => 250,
+            'price' => 2.50,
             'image' => 'seed/espresso.jpg',
             'category' => 'Koffie',
         ]);
@@ -90,7 +90,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => null,
             'name' => 'Latte Macchiato',
             'description' => 'Espresso tussen twee lagen melk',
-            'price' => 250,
+            'price' => 2.50,
             'image' => 'seed/lattemacchiato.jpg',
             'category' => 'Latte'
         ]);

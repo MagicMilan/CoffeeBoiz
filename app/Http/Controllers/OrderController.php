@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\OrderItem;
+use App\Product;
 use Illuminate\Http\Request;
 
 use App\Cart;
@@ -39,7 +40,6 @@ class OrderController extends Controller
             $orderItem = new OrderItem();
             $orderItem->order_id = $order->id;
             $orderItem->product_id = $item->product->id;
-
             $orderItem->save();
 
             CartItem::destroy($item->id);
@@ -51,5 +51,24 @@ class OrderController extends Controller
     {
         $order = Order::find($orderId);
         return view('orders.view', ['order' => $order]);
+    }
+
+    public function viewOrders()
+    {
+        $orders = Order::where('send', 0)->get();
+        $items = OrderItem::all();
+        $products = Product::all();
+        return view('orders.orders', ['orders' => $orders, 'items' => $items, 'products' => $products]);
+    }
+
+    public function setSend($id)
+    {
+        $order = Order::findOrFail($id);
+
+        $order->send = true;
+
+        $order->save();
+
+        return redirect("/orders");
     }
 }

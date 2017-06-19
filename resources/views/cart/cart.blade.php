@@ -20,18 +20,18 @@
                         <td class="col-sm-8 col-md-6">
                             <div class="media">
                                 <a class="thumbnail pull-left" href="#"> <img class="media-object"
-                                                                              src="images/{{$item->product->image}}"
+                                                                              src="images/{{ $item->product->image }}"
                                                                               style="width: 100px; height: 72px;"> </a>
                                 <div class="media-body">
                                     <h4 class="media-heading"><a style="text-decoration: none;"
-                                                                 href="#">{{$item->product->name}}</a></h4>
+                                                                 href="#">{{ $item->product->name }}</a></h4>
                                 </div>
                             </div>
                         </td>
                         <td class="col-sm-1 col-md-1" style="text-align: center">
                         </td>
                         <td class="col-sm-1 col-md-1 text-center"></td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>€ {{$item->product->price}}</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>€ {{ number_format($item->product->price,2,',','') }}</strong></td>
                         <td class="col-sm-1 col-md-1">
                             <a href="/removeItem/{{$item->id}}">
                                 <button type="button" class="btn btn-danger">
@@ -47,7 +47,7 @@
                     <td></td>
                     <td></td>
                     <td><h3>Totaal</h3></td>
-                    <td class="text-right"><h3><strong>€ {{ $total }}</strong></h3></td>
+                    <td class="text-right"><h3><strong>€ {{ number_format($total,2,',','') }}</strong></h3></td>
                 </tr>
                 <tr>
                     <td></td>

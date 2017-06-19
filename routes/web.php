@@ -37,20 +37,21 @@ Route::get('categories/{product}/edit', 'categoriesController@edit')->middleware
  */
 Route::get('/profile/{id}', 'ProfileController@profile')->middleware('admin');
 
-Route::get('/profile', 'ProfileController@my_profile');
+Route::get('/profile', 'ProfileController@my_profile')->middleware('auth');
 
 
 /*
  * Shopping cart
  */
-Route::get('/addProduct/{productId}', 'CartController@addItem');
-Route::get('/removeItem/{productId}', 'CartController@removeItem');
-Route::get('/cart', 'CartController@showCart');
+Route::get('/addProduct/{productId}', 'CartController@addItem')->middleware('auth');;
+Route::get('/removeItem/{productId}', 'CartController@removeItem')->middleware('auth');;
+Route::get('/cart', 'CartController@showCart')->middleware('auth');
 
 
 /*
  * Order
  */
-Route::put('/checkout', 'OrderController@checkout');
-
-Route::get('order/{orderId}', 'OrderController@viewOrder');
+Route::put('/checkout', 'OrderController@checkout')->middleware('auth');
+Route::get('order/{orderId}', 'OrderController@viewOrder')->middleware('auth');
+Route::get('/orders', 'OrderController@viewOrders')->middleware('admin');
+Route::put('/order/{orderId}', 'OrderController@setSend')->middleware('admin');

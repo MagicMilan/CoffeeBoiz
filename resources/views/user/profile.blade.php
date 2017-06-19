@@ -14,7 +14,7 @@
             <div class="col-md-9 col-lg-9">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <h1 class="panel-title">{{ $user->name }}</h1>
+                        <h1 class="panel-title">Profiel</h1>
                         <table class="table table-user-information">
                             <tbody>
                             <tr>
@@ -47,7 +47,8 @@
                             </tr>
                             <tr>
                                 <td>Lid sinds:</td>
-                                <td>{{ $user->created_at->format('j - n - Y') }} ({{ $user->created_at->diffInDays() }} dagen)
+                                <td>{{ $user->created_at->format('j - n - Y') }} ({{ $user->created_at->diffInDays() }}
+                                    dagen)
                                 </td>
                             </tr>
                             </tbody>
@@ -63,24 +64,39 @@
                     <div class="panel-body">
                         <h1 class="panel-title">Bestellingen</h1>
                         <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th class="col-sm-2">#</th>
-                                <th class="col-sm-4">Datum</th>
-                                <th class="col-sm-2">Prijs</th>
-                                <th class="col-sm-2"></th>
-                            </tr>
-                            </thead>
-                            @forelse($orders as $order)
+                            @if($orders->count() > 0)
+                                <thead>
                                 <tr>
-                                    <td>{{$order->id}}</td>
-                                    <td><a href="/order/{{$order->id}}"> {{$order->created_at}}</a></td>
-                                    <td>€ {{ number_format($order->total_price, 2, ',', '') }}</td>
-                                    <td><a href="/order/{{$order->id}}"><i class="fa fa-search-plus"></i></a></td>
+                                    <th class="col-sm-2">Ordernummer</th>
+                                    <th class="col-sm-4">Datum en tijd</th>
+                                    <th class="col-sm-2">Prijs</th>
+                                    <th>Status</th>
                                 </tr>
-                            @empty
+                                </thead>
+                            @else
                                 <p>Geen bestellingen</p>
-                            @endforelse
+                            @endif
+                            @foreach($orders as $order)
+                                <tr>
+                                    <td>
+                                        <a href="/order/{{$order->id}}">#{{$order->id}} <i
+                                                    class="fa fa-search-plus"></i></a>
+                                    </td>
+                                    <td>
+                                        {{ $order->created_at->format('j-n-Y G:i') }}
+                                    </td>
+                                    <td>€ {{ number_format($order->total_price, 2, ',', '') }}</td>
+
+                                    <td>@if($order->send)
+                                            Afgeleverd
+                                        @elseif($order->not_send)
+                                            Niet afgeleverd
+                                        @else
+                                            Bestelling geplaatst
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div>
