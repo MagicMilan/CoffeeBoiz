@@ -23,9 +23,9 @@
                 @foreach($products as $product)
                     <div class="span4 plan">
                         <div class="title">{{ strtoupper($product->name) }}</div>
-                        <div class="image"><img width="200" class="picture"   src=" {{ ("images/$product->image") }}"></div>
-                        <div class="price">€ {{ number_format($product->price,2,',','') }}</div>
-                        <div class="description">{{ $product->description }}</div>
+                        <div class="image"><img width="200" class="picture" src=" {{ ("images/$product->image") }}">
+                        </div>
+                        <div class="description">€ {{ number_format($product->price,2,',','') }}</div>
                         <a class="btn" href="/addProduct/{{$product->id}}">
                             +<i class="fa fa-shopping-cart" style="color: #fff"></i>
                         </a>
@@ -35,12 +35,7 @@
         </div>
     </section>
 
-    <!-- footer-2 -->
-    <footer class="footer-2 bg-starbucks">
-        <div class="container">
-            <p>&copy; The Coffee Project</p>
-        </div>
-    </footer>
+
 @endsection
 
 

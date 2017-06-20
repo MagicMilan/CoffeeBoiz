@@ -28,6 +28,7 @@
                                 <option disabled="disabled">Geen categoriën</option>
                             @endforelse
                         </select>
+                        <br />
                         <a href="/categories/create">Categorie toevoegen</a>
                     </div>
 
@@ -39,8 +40,11 @@
                     <div class="form-group">
                         <label for="image">Afbeelding</label>
                         <input type="file" name="image" id="image" required>
+
                     </div>
-                    <input type="submit" value="Opslaan" class="btn btn-success">
+                    <div class="form-group">
+                        <input type="submit" value="Opslaan" class="btn btn-success">
+                    </div>
                 </form>
             </div>
         </div>

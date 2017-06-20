@@ -1,6 +1,6 @@
 
 .form-group {
-    max-width: 230px;
+    max-width: 60em;
     padding: 15px 15px 15px;
     margin: 0 auto;
     background-color: #fff;
@@ -19,6 +19,7 @@
     font-size: 15px;
     height: auto;
     padding: auto;
+    width: 97.25%;
 }
 
 .form-group .form-control:focus {

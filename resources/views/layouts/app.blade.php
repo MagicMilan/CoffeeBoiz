@@ -46,9 +46,13 @@
     <div class="container">
         @yield('content')
     </div>
-
 </div>
-
+<!-- footer-2 -->
+<footer class="footer-2 bg-starbucks">
+    <div class="container">
+        <p>&copy; The Coffee Project</p>
+    </div>
+</footer>
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 <!-- Placed at the end of the document so the pages load faster -->

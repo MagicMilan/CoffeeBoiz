@@ -33,9 +33,12 @@
                                 @endif
                             @endif
                             <div class="title">{{ strtoupper($product->name) }}</div>
-                            <div class="image"><img width="150" class="picture" src="{{ ("images/$product->image") }}"></div>
-                            <div class="price">€{{ number_format($product->price,2,',','') }}</div>
-                            <div class="description">{{ $product->description }}</div>
+                            <div class="image">
+                                <img width="150" class="picture" src="{{ ("images/$product->image") }}">
+                            </div>
+                            <div class="description">
+                                €{{ number_format($product->price,2,',','') }}
+                            </div>
                             <a class="btn" href="/addProduct/{{$product->id}}">
                                 +<i class="fa fa-shopping-cart" style="color: #fff"></i>
                             </a>

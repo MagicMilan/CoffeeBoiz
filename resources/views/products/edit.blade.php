@@ -22,7 +22,7 @@
 
                     <div class="form-group">
                         <label for="category">Categorie</label>
-                        <select name="category" id="category">
+                        <select name="category_id" id="category">
                             <option value="{{ $product->category->id }}">{{ $product->category->name }}</option>
                             @forelse($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -30,12 +30,13 @@
                                 <option disabled="disabled">Geen categoriën</option>
                             @endforelse
                         </select>
+                        <br />
                         <a href="/categories/create">Categorie toevoegen</a>
                     </div>
 
                     <div class="form-group">
                         <label for="price">Prijs</label>
-                        <input type="number" step="any" min="1" name="price" id="price" value="{{ $product->price }}"
+                        <input type="number" step="any" min="1" name="price" id="price" value="{{ number_format($product->price, 2, '.', '') }}"
                                required>
                     </div>
 
@@ -43,7 +44,9 @@
                         <label for="image">Afbeelding</label>
                         <input type="file" name="image" id="image" required>
                     </div>
-                    <input type="submit" value="Opslaan" class="btn btn-success">
+                    <div class="form-group">
+                        <input type="submit" value="Opslaan" class="btn btn-success">
+                    </div>
                 </form>
             </div>
         </div>
