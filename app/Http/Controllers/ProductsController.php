@@ -43,7 +43,7 @@ class ProductsController extends Controller
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->category = $request->category;
+        $product->category_id = $request->category_id;
         $product->image = $imageName;
 
 
@@ -77,7 +77,7 @@ class ProductsController extends Controller
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->category = $request->category;
+        $product->category_id = $request->category_id;
         $product->image = $imageName;
 
         $product->save();
