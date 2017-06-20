@@ -23,7 +23,7 @@
                 @foreach($products as $product)
                     <div class="span4 plan">
                         <div class="title">{{ strtoupper($product->name) }}</div>
-                        <div class="image"><img width="200" src=" {{ ("images/$product->image") }}"></div>
+                        <div class="image"><img width="200" class="picture"   src=" {{ ("images/$product->image") }}"></div>
                         <div class="price">€ {{ number_format($product->price,2,',','') }}</div>
                         <div class="description">{{ $product->description }}</div>
                         <a class="btn" href="/addProduct/{{$product->id}}">

@@ -5,7 +5,6 @@
 */ 
 
 
-
 /* 62px */
 /* 52px */
 /* 40px */
@@ -1504,4 +1503,14 @@ section * {
   margin: 0;
   font-size: 30px;
   text-decoration: none;
+}
+
+.image {
+  height: 200px;
+}
+.picture{
+  height: 200px;
+  width: 200px;
+  margin: auto;
+
 }

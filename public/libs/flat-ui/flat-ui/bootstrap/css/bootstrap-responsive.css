@@ -162,6 +162,8 @@
   }
   .span3 {
     width: 270px;
+    min-width: 270px;
+
   }
   .span2 {
     width: 170px;
@@ -511,7 +513,7 @@
     width: 228px;
   }
   .span3 {
-    width: 166px;
+
   }
   .span2 {
     width: 104px;
@@ -1106,4 +1108,6 @@
     height: auto !important;
     overflow: visible !important;
   }
+}
+
 }
