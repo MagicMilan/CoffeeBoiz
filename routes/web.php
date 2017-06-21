@@ -21,14 +21,31 @@ Route::delete('/products/{product}', 'ProductsController@destroy')->middleware('
 /*
  * Categoriën
  */
-Route::get('/categories', 'categoriesController@index');
-Route::post('/categories', 'categoriesController@store')->middleware('admin');
-Route::get('/categories/create', 'categoriesController@create')->middleware('admin');
-Route::get('/categories/{product}', 'categoriesController@show')->middleware('admin');
-Route::put('/categories/{product}', 'categoriesController@update')->middleware('admin');
-Route::delete('/categories/{product}', 'categoriesController@destroy')->middleware('admin');
-Route::get('/categories/{product}/edit', 'categoriesController@edit')->middleware('admin');
+Route::get('/categories', 'CategoriesController@index');
+Route::post('/categories', 'CategoriesController@store')->middleware('admin');
+Route::get('/categories/create', 'CategoriesController@create')->middleware('admin');
+Route::get('/categories/{product}', 'CategoriesController@show')->middleware('admin');
+Route::put('/categories/{product}', 'CategoriesController@update')->middleware('admin');
+Route::delete('/categories/{product}', 'CategoriesController@destroy')->middleware('admin');
+Route::get('/categories/{product}/edit', 'CategoriesController@edit')->middleware('admin');
 
+
+/*
+ * Users
+ */
+Route::get('/users', 'UsersController@index')->middleware('admin');
+Route::get('/users_desc', 'UsersController@indexDesc')->middleware('admin');
+
+Route::get('/users/sort_name', 'UsersController@sortName')->middleware('admin');
+Route::get('/users/sort_name_desc', 'UsersController@sortNameDesc')->middleware('admin');
+
+Route::get('/users/sort_created_at', 'UsersController@sortCreatedAt')->middleware('admin');
+Route::get('/users/sort_created_at_desc', 'UsersController@sortCreatedAtDesc')->middleware('admin');
+
+Route::get('/users/sort_type', 'UsersController@sortType')->middleware('admin');
+Route::get('/users/sort_type_desc', 'UsersController@sortTypeDesc')->middleware('admin');
+
+Route::get('/users/search/{value}', 'UsersController@search')->middleware('admin');
 
 /*
  * Profielen
