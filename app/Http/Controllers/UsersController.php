@@ -111,8 +111,25 @@ class UsersController extends Controller
         return view('user.list', ['users' => $users, 'orders' => $orders]);
     }
 
-    public function search($value)
+    /*
+     * Search
+     */
+    public function search()
     {
+        $value = \Request::get('value');
 
+        $users = User::select(DB::raw('id, name, phone_nr, address, place, admin, created_at'))
+            ->where('id', 'LIKE', '%'.$value.'%')
+            ->orWhere('name', 'LIKE', '%'.$value.'%')
+            ->orWhere('phone_nr', 'LIKE', '%'.$value.'%')
+            ->orWhere('address', 'LIKE', '%'.$value.'%')
+            ->orWhere('place', 'LIKE', '%'.$value.'%')
+            ->orWhere('created_at', 'LIKE', '%'.$value.'%')
+            ->orWhere('phone_nr', 'LIKE', '%'.$value.'%')
+            ->paginate(20);
+
+        $orders = Order::all();
+
+        return view('user.list', ['users' => $users, 'orders' => $orders]);
     }
 }

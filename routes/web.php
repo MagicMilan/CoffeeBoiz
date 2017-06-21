@@ -45,7 +45,7 @@ Route::get('/users/sort_created_at_desc', 'UsersController@sortCreatedAtDesc')->
 Route::get('/users/sort_type', 'UsersController@sortType')->middleware('admin');
 Route::get('/users/sort_type_desc', 'UsersController@sortTypeDesc')->middleware('admin');
 
-Route::get('/users/search/{value}', 'UsersController@search')->middleware('admin');
+Route::get('/users/search/', 'UsersController@search')->middleware('admin');
 
 /*
  * Profielen

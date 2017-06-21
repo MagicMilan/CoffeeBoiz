@@ -10,9 +10,8 @@
             {{ $users->links() }}
 
 
-            <form class="form-horizontal pull-right" role="form" method="POST">
-                {{ csrf_field() }}
-                <input type="text" name="search" id="search" placeholder="Zoeken">
+            <form class="form-horizontal pull-right" method="GET" action="/users/search">
+                <input type="text" name="value" placeholder="Zoeken">
             </form>
 
 
@@ -64,7 +63,7 @@
                     </tr>
                     </thead>
                 @else
-                    Geen klanten
+                    Geen gebruikers
                 @endif
                 @foreach($users as $user)
                     <tr>
