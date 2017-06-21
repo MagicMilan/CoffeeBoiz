@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-8">
             <h1>Bestellingen</h1>
-            <a href="/orders/send" class="btn">Afgeleverd</a> <a href="/orders/not_send" class="btn">Niet afgeleverd</a>
+            <a href="/orders/send" class="btn btn-success">Afgeleverd</a> <a href="/orders/not_send" class="btn btn-danger">Niet afgeleverd</a>
             <table class="table table-striped">
                 @if($orders->count() > 0)
                     <thead>
