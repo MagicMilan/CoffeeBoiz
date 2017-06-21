@@ -1786,7 +1786,20 @@ section * {
 }
 
 
+.catpict {
+    height: 150px;
+    width: 150px;
+    transition: 0.15s ease-out;
 
 
+}
 
+.catpict:hover{
+    transform: scale(1.1);
+    transition: 0.15s ease-in;
+
+}
+a:hover{
+    opacity: 1!important;
+}
 
