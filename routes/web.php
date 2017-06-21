@@ -1,8 +1,14 @@
 <?php
 
 Route::get('/', 'IndexController@index');
+Route::get('/home', 'IndexController@index');
+
+
+
+
 
 Auth::routes();
+
 
 
 /*
@@ -51,7 +57,7 @@ Route::get('/users/search/', 'UsersController@search')->middleware('admin');
  * Profielen
  */
 Route::get('/profile/{id}', 'ProfileController@profile')->middleware('admin');
-Route::get('/profile', 'ProfileController@my_profile')->middleware('auth');
+Route::get('/profile', 'ProfileController@my_profile')->middleware('facebook');
 
 
 /*
@@ -75,3 +81,14 @@ Route::get('/orders/not_send', 'OrderController@viewNotSend')->middleware('admin
 
 Route::put('/order/{orderId}/send', 'OrderController@setSend')->middleware('admin');
 Route::put('/order/{orderId}/not_send', 'OrderController@setNotSend')->middleware('admin');
+
+
+/*
+ * Facebook login
+ */
+Route::get('/redirect', 'SocialAuthController@redirect');
+Route::get('/callback', 'SocialAuthController@callback');
+
+
+Route::get('/facebook/register', 'Auth\RegisterController@registerFacebookView');
+Route::put('/facebook/register', 'Auth\RegisterController@registerFacebook');
