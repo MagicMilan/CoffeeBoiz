@@ -14,12 +14,14 @@
     <link rel="shortcut icon" href="../libs/flat-ui/flat-ui/images/favicon.ico">
     <script src="https://use.fontawesome.com/9a55390c4c.js"></script>
 
-    <link rel="stylesheet" href="{{ asset('libs/flat-ui/flat-ui/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('libs/flat-ui/flat-ui/css/flat-ui.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('libs/flat-ui/flat-ui/bootstrap/css/bootstrap-responsive.css') }}">
-
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('libs/flat-ui/flat-ui/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('libs/flat-ui/flat-ui/bootstrap/css/bootstrap-responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('libs/flat-ui/flat-ui/css/flat-ui.min.css') }}">
+
+
 
 
 </head>
