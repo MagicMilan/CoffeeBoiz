@@ -53,7 +53,6 @@
                             <button type="submit" class="btn btn-login">
                                 <b>Inloggen</b>
                             </button>
-                            <a href="redirect">Login met Facebook</a>
                         </div>
                     </div>
                 </form>

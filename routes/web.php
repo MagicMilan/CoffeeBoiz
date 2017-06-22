@@ -3,12 +3,7 @@
 Route::get('/', 'IndexController@index');
 Route::get('/home', 'IndexController@index');
 
-
-
-
-
 Auth::routes();
-
 
 
 /*
@@ -86,9 +81,11 @@ Route::put('/order/{orderId}/not_send', 'OrderController@setNotSend')->middlewar
 /*
  * Facebook login
  */
-Route::get('/redirect', 'SocialAuthController@redirect');
-Route::get('/callback', 'SocialAuthController@callback');
+//Route::get('/redirect', 'SocialAuthController@redirect');
+//Route::get('/callback', 'SocialAuthController@callback');
 
-
-Route::get('/facebook/register', 'Auth\RegisterController@registerFacebookView');
-Route::put('/facebook/register', 'Auth\RegisterController@registerFacebook');
+/*
+ * Facebook Register
+ */
+//Route::get('/facebook/register', 'Auth\RegisterController@registerFacebookView');
+//Route::put('/facebook/register', 'Auth\RegisterController@registerFacebook');
