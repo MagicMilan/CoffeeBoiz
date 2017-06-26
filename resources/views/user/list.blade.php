@@ -59,12 +59,13 @@
                             </a>
                         </th>
 
-                        <th>Aantal bestellingen</th>
+                        <th class="col-sm-4">Aantal bestellingen</th>
                     </tr>
                     </thead>
                 @else
                     Geen gebruikers
                 @endif
+
                 @foreach($users as $user)
                     <tr>
                         <td>
@@ -95,6 +96,11 @@
                         </td>
                         <td>
                             {{ $orders->where('user_id', $user->id)->count() }}
+                        </td>
+                        <td>
+                            <a href="users/{{ $user->id }}/delete">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
