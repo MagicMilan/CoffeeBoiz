@@ -98,7 +98,7 @@
                             {{ $orders->where('user_id', $user->id)->count() }}
                         </td>
                         <td>
-                            <a href="users/{{ $user->id }}/delete">
+                            <a href="/users/{{ $user->id }}/delete">
                                 <i class="fa fa-trash" aria-hidden="true"></i>
                             </a>
                         </td>
