@@ -58,8 +58,8 @@ Route::get('/profile', 'ProfileController@my_profile')->middleware('facebook');
 /*
  * Shopping cart
  */
-Route::get('/addProduct/{productId}', 'CartController@addItem')->middleware('auth');;
-Route::get('/removeItem/{productId}', 'CartController@removeItem')->middleware('auth');;
+Route::get('/addProduct/{productId}', 'CartController@addItem')->middleware('auth');
+Route::get('/removeItem/{productId}', 'CartController@removeItem')->middleware('auth');
 Route::get('/cart', 'CartController@showCart')->middleware('auth');
 
 
