@@ -919,8 +919,6 @@ section * {
 .header-11 .navbar .nav > li > a {
     padding: 35px 0 27px;
     font-size: 14px;
-    font-weight: normal;
-    color: #7f8c8d;
     font-weight: 500;
     letter-spacing: 1px;
     color: inherit;
@@ -944,7 +942,6 @@ section * {
 
 @media (max-width: 979px) {
     .header-11 .navbar .nav-collapse {
-        padding-top: 28px;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
@@ -1044,7 +1041,6 @@ section * {
 
 .header-11-sub h3 {
     font-size: 33px;
-    font-weight: normal;
     color: #ffffff;
     margin-bottom: 15px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1320,7 +1316,7 @@ section * {
 .price-1 .plan .description {
     margin: 10px 0;
     padding-top: 22px;
-    line-height: 0px;
+    line-height: 0;
     font-weight: normal;
     background-color: #ebedee;
     padding-bottom: 22px;
@@ -1407,7 +1403,6 @@ section * {
     background: transparent;
     line-height: 59.99999999999999px;
     font-size: 50px;
-    font-weight: normal;
     color: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
@@ -1452,7 +1447,7 @@ section * {
     box-sizing: border-box;
     position: absolute;
     padding-left: 6px;
-    line-height: 59.99999999999999px;
+    line-height: 60px;
     font-size: 50px;
     font-weight: normal;
     color: #a1a9b1;
@@ -1646,7 +1641,6 @@ section * {
 }
 
 .header-11-sub .background {
-    background-image: url("../../common/assets/Brazil_002.png");
     opacity: 0.8;
     filter: alpha(opacity=80);
 }
@@ -1678,7 +1672,6 @@ section * {
     padding-top: 40px;
     padding-bottom: 40px;
     margin: 0 0 20px;
-    background-image: url('../assets/koffieheader1.jpg')
 }
 
 @media (max-width: 767px) {
