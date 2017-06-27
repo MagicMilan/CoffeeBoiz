@@ -15,7 +15,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <h1 class="panel-title">Profiel aanpassen</h1>
-                        <form method="POST" action="/user/{{ $user->id }}" enctype='multipart/form-data'>
+                        <form method="POST" action="/users/{{ $user->id }}" enctype='multipart/form-data'>
                             {{ csrf_field() }}
                             <input type="hidden" name="_method" value="put">
                             <table class="table table-user-information">
@@ -23,19 +23,23 @@
                                 <tbody>
                                 <tr>
                                     <td><label for="name">Naam:</label></td>
-                                    <td><input type="text" name="name" id="name" value="{{ $user->name }}" required></td>
+                                    <td><input type="text" name="name" id="name" value="{{ $user->name }}" required>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><label for="email">Email</label></td>
-                                    <td><input type="email" name="email" id="email" value="{{ $user->email }}" required></td>
+                                    <td><input type="email" name="email" id="email" value="{{ $user->email }}" required>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><label for="dob">Geboortedatum:</label></td>
-                                    <td><input type="date" name="dob" id="dob" value="{{ $user->dob }}" required></td>
+                                    <td><input type="date" name="dob" id="dob" value="{{ $user->dob->format('Y-m-d') }}"
+                                               required></td>
                                 </tr>
                                 <tr>
                                     <td><label for="address">Adres:</label></td>
-                                    <td><input type="text" name="address" id="address" value="{{ $user->address }}" required></td>
+                                    <td><input type="text" name="address" id="address" value="{{ $user->address }}"
+                                               required></td>
                                 </tr>
                                 <tr>
                                     <td><label for="zip">Postcode:</label></td>
@@ -43,11 +47,24 @@
                                 </tr>
                                 <tr>
                                     <td><label for="place">Woonplaats:</label></td>
-                                    <td><input type="text" name="place" id="place" value="{{ $user->place }}" required></td>
+                                    <td><input type="text" name="place" id="place" value="{{ $user->place }}" required>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><label for="phone_nr">Telefoonnummer:</label></td>
-                                    <td><input type="text" name="dob" id="phone_nr" value="{{ $user->phone_nr }}" required></td>
+                                    <td><input type="text" name="phone_nr" id="phone_nr" value="{{ $user->phone_nr }}"
+                                               required></td>
+                                </tr>
+                                <tr>
+                                    <td>Type gebruiker:</td>
+                                    <td>
+                                        <label for="admin">Personeel:</label>
+                                        @if($user->admin)
+                                            <input type="checkbox" name="admin" id="admin" checked>
+                                        @else
+                                            <input type="checkbox" name="admin" id="admin">
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Lid sinds:</td>
@@ -56,10 +73,22 @@
                                         dagen)
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <a href="/users" class="btn btn-default" title="Wijzigingen annuleren">
+                                            Annuleren
+                                        </a>
+                                        <input type="submit" value="Opslaan" class="btn btn-success"
+                                               title="Wijzigingen opslaan">
+                                    </td>
+                                </tr>
                                 </tbody>
+
                             </table>
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>

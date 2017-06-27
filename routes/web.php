@@ -47,6 +47,7 @@ Route::get('/users/sort_type_desc', 'UsersController@sortTypeDesc')->middleware(
 Route::get('/users/search/', 'UsersController@search')->middleware('admin');
 
 Route::get('/users/{id}/edit', 'UsersController@edit')->middleware('admin');
+Route::put('/users/{id}', 'UsersController@update')->middleware('admin');
 Route::get('/users/{id}/delete', 'UsersController@delete')->middleware('admin');
 Route::delete('/users/{id}', 'UsersController@destroy')->middleware('admin');
 

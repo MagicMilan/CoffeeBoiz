@@ -144,6 +144,31 @@ class UsersController extends Controller
         return View('user.edit')->with('user', $user);
     }
 
+    public function update(Request $request, $id)
+    {
+
+        $user = User::findOrFail($id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->dob = $request->dob;
+        $user->address = $request->address;
+        $user->zip = $request->zip;
+        $user->place = $request->place;
+        $user->phone_nr = $request->phone_nr;
+
+        if ($request->admin === 'on') {
+            $request->admin = true;
+        } else {
+            $request->admin = false;
+        }
+
+        $user->admin = $request->admin;
+
+        $user->save();
+
+        return redirect("/users");
+    }
 
     public function delete($id)
     {
