@@ -79,8 +79,10 @@
                             @foreach($orders as $order)
                                 <tr>
                                     <td>
-                                        <a href="/order/{{$order->id}}">#{{$order->id}} <i
-                                                    class="fa fa-search-plus"></i></a>
+                                        <a href="/order/{{$order->id}}"
+                                           title="Order #{{ $order->id }} bekijken">#{{$order->id}}
+                                            <i class="fa fa-search-plus"></i>
+                                        </a>
                                     </td>
                                     <td>
                                         {{ $order->created_at->format('j-n-Y G:i') }}

@@ -18,7 +18,7 @@ class UsersController extends Controller
     {
         $users = User::select(DB::raw('id, name, phone_nr, admin, created_at'))
             ->orderBy('id')
-            ->paginate(20);
+            ->paginate(15);
 
         $orders = Order::all();
 
@@ -29,7 +29,7 @@ class UsersController extends Controller
     {
         $users = User::select(DB::raw('id, name, phone_nr, admin, created_at'))
             ->orderBy('id', 'DESC')
-            ->paginate(20);
+            ->paginate(15);
 
         $orders = Order::all();
 
@@ -43,7 +43,7 @@ class UsersController extends Controller
     {
         $users = User::select(DB::raw('id, name, phone_nr, admin, created_at'))
             ->orderBy('name')
-            ->paginate(20);
+            ->paginate(15);
 
         $orders = Order::all();
 
@@ -54,7 +54,7 @@ class UsersController extends Controller
     {
         $users = User::select(DB::raw('id, name, phone_nr, admin, created_at'))
             ->orderBy('name', 'DESC')
-            ->paginate(20);
+            ->paginate(15);
 
         $orders = Order::all();
 
@@ -68,7 +68,7 @@ class UsersController extends Controller
     {
         $users = User::select(DB::raw('id, name, phone_nr, admin, created_at'))
             ->orderBy('created_at', 'DESC')
-            ->paginate(20);
+            ->paginate(15);
 
         $orders = Order::all();
 
@@ -79,7 +79,7 @@ class UsersController extends Controller
     {
         $users = User::select(DB::raw('id, name, phone_nr, admin, created_at'))
             ->orderBy('created_at')
-            ->paginate(20);
+            ->paginate(15);
 
         $orders = Order::all();
 
@@ -93,7 +93,7 @@ class UsersController extends Controller
     {
         $users = User::select(DB::raw('id, name, phone_nr, admin, created_at'))
             ->orderBy('admin', 'desc')
-            ->paginate(20);
+            ->paginate(15);
 
         $orders = Order::all();
 
@@ -104,7 +104,7 @@ class UsersController extends Controller
     {
         $users = User::select(DB::raw('id, name, phone_nr, admin, created_at'))
             ->orderBy('admin')
-            ->paginate(20);
+            ->paginate(15);
 
         $orders = Order::all();
 
@@ -126,7 +126,7 @@ class UsersController extends Controller
             ->orWhere('place', 'LIKE', '%' . $value . '%')
             ->orWhere('created_at', 'LIKE', '%' . $value . '%')
             ->orWhere('phone_nr', 'LIKE', '%' . $value . '%')
-            ->paginate(20);
+            ->paginate(15);
 
         $orders = Order::all();
 
@@ -136,10 +136,14 @@ class UsersController extends Controller
     /*
      * Make admin
      */
-    public function setAdmin($id)
-    {
 
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+
+        return View('user.edit')->with('user', $user);
     }
+
 
     public function delete($id)
     {

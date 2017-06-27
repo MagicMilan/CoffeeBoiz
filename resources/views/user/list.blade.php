@@ -11,7 +11,7 @@
 
 
             <form class="form-horizontal pull-right" method="GET" action="/users/search">
-                <input type="text" name="value" placeholder="Zoeken">
+                <input type="text" name="value" placeholder="Zoeken" title="Zoeken naar gebruikers">
             </form>
 
 
@@ -98,6 +98,9 @@
                             {{ $orders->where('user_id', $user->id)->count() }}
                         </td>
                         <td>
+                            <a href="/users/{{ $user->id }}/edit">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
                             <a href="/users/{{ $user->id }}/delete">
                                 <i class="fa fa-trash" aria-hidden="true"></i>
                             </a>

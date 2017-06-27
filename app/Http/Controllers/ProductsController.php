@@ -14,8 +14,9 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Product::all();
+        $categories = DB::table('categories')->limit(5)->get();
 
-        return view('products.products', compact('products'));
+        return view('products.products', ['products' => $products, 'categories' => $categories]);
     }
 
     public function create()

@@ -31,7 +31,8 @@
                         <td class="col-sm-1 col-md-1" style="text-align: center">
                         </td>
                         <td class="col-sm-1 col-md-1 text-center"></td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>€ {{ number_format($item->product->price,2,',','') }}</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center">
+                            <strong>€ {{ number_format($item->product->price,2,',','') }}</strong></td>
                         <td class="col-sm-1 col-md-1">
                             <a href="/removeItem/{{$item->id}}">
                                 <button type="button" class="btn btn-danger">
@@ -54,17 +55,24 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <a href="/products" class="btn btn-default">
+                        <a href="/products" class="btn btn-default" title="Terugkeren naar producten.">
                             Verder winkelen
-                        </a></td>
+                        </a>
+                    </td>
                     <td>
                         <form method="post" action="/checkout">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="_method" value="put">
                             <input type="hidden" value="PUT">
-                            <button type="submit" class="btn btn-success">
-                                Bestellen
-                            </button>
+                            @if($total <= 0)
+                                <button type="submit" class="btn btn-danger" disabled='disabled'
+                                        style='cursor: not-allowed'
+                                        title='Er moet minstens één product besteld worden.'>Bestellen
+                                </button>
+                            @else
+                                <button type="submit" class="btn btn-success" title="Bestellen">Bestellen</button>
+                            @endif
+
                         </form>
                     </td>
                 </tr>

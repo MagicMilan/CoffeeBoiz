@@ -45,7 +45,10 @@
                         <input type="file" name="image" id="image" required>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Opslaan" class="btn btn-success">
+                        <a href="/products" class="btn btn-default" title="Wijzigingen annuleren">
+                            Annuleren
+                        </a>
+                        <input type="submit" value="Opslaan" class="btn btn-success" title="Wijzigingen opslaan">
                     </div>
                 </form>
             </div>

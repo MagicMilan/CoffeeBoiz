@@ -7,9 +7,9 @@
                 <form method="POST" action="/users/{{ $user->id }}" enctype='multipart/form-data'>
                     {{ csrf_field() }}
 
-                    <div class="form-group">
+                    <div class="alert alert-danger" role="alert">
                         <h2>Gebruiker verwijderen</h2>
-                        <p>Weet je zeker dat je <strong><a href="/profile/{{ $user->id }}">#{{ $user->id }} {{ $user->name }} </a></strong> wilt verwijderen?</p>
+                        <p>Weet je zeker dat je <strong><a href="/profile/{{ $user->id }}">#{{ $user->id }}</a> {{ $user->name }} </strong> wilt verwijderen?</p>
                         <input type="hidden" name="_method" value="delete">
 
 
@@ -27,6 +27,10 @@
                     <div class="panel-body">
                         <table class="table table-user-information">
                             <tbody>
+                            <tr>
+                                <td>Id:</td>
+                                <td><strong>#{{ $user->id }}</strong></td>
+                            </tr>
                             <tr>
                                 <td>Naam:</td>
                                 <td>{{ $user->name }}</td>

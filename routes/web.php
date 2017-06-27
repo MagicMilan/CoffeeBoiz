@@ -35,21 +35,18 @@ Route::get('/categories/{product}/edit', 'CategoriesController@edit')->middlewar
  * Users
  */
 Route::get('/users', 'UsersController@index')->middleware('admin');
-Route::get('/users_desc', 'UsersController@indexDesc')->middleware('admin');
 
+Route::get('/users_desc', 'UsersController@indexDesc')->middleware('admin');
 Route::get('/users/sort_name', 'UsersController@sortName')->middleware('admin');
 Route::get('/users/sort_name_desc', 'UsersController@sortNameDesc')->middleware('admin');
-
 Route::get('/users/sort_created_at', 'UsersController@sortCreatedAt')->middleware('admin');
 Route::get('/users/sort_created_at_desc', 'UsersController@sortCreatedAtDesc')->middleware('admin');
-
 Route::get('/users/sort_type', 'UsersController@sortType')->middleware('admin');
 Route::get('/users/sort_type_desc', 'UsersController@sortTypeDesc')->middleware('admin');
 
 Route::get('/users/search/', 'UsersController@search')->middleware('admin');
 
-
-Route::put('/users/{id}', 'UsersController@setAdmin')->middleware('admin');
+Route::get('/users/{id}/edit', 'UsersController@edit')->middleware('admin');
 Route::get('/users/{id}/delete', 'UsersController@delete')->middleware('admin');
 Route::delete('/users/{id}', 'UsersController@destroy')->middleware('admin');
 
