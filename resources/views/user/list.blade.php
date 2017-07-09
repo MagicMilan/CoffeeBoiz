@@ -99,9 +99,9 @@
                         </td>
                         <td>
                             <a href="/users/{{ $user->id }}/edit">
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                <i class="fa fa-pencil" aria-hidden="true" title="#{{ $user->id }} - {{ $user->name }} wijzigen"></i>
                             </a>
-                            <a href="/users/{{ $user->id }}/delete">
+                            <a href="/users/{{ $user->id }}/delete" title="#{{ $user->id }} - {{ $user->name }} verwijderen">
                                 <i class="fa fa-trash" aria-hidden="true"></i>
                             </a>
                         </td>

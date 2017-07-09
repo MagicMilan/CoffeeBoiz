@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-8">
             <h3>Ordernummer: #{{$order->id}}</h3>
-            <p>Bestelling geplaatst op: {{$order->created_at}}</p>
+            <p>Bestelling geplaatst op: {{$order->created_at->format('j-n-Y G:i')}}</p>
         </div>
     </div>
     <div class="row">

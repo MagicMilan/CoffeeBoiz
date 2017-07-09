@@ -87,6 +87,7 @@ Route::put('/order/{orderId}/not_send', 'OrderController@setNotSend')->middlewar
 //Route::get('/redirect', 'SocialAuthController@redirect');
 //Route::get('/callback', 'SocialAuthController@callback');
 
+
 /*
  * Facebook Register
  */

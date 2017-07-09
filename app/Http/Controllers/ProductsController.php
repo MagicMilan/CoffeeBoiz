@@ -81,6 +81,8 @@ class ProductsController extends Controller
         $product->category_id = $request->category_id;
         $product->image = $imageName;
 
+
+
         $product->save();
 
         return redirect("/products");
